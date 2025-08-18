@@ -1,4 +1,5 @@
-FROM python:3.11-slim
+# FROM python:3.11-slim
+FROM mcr.microsoft.com/playwright/python:v1.53.0-noble
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -14,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Install Playwright and browser
 RUN playwright install chromium
-RUN playwright install-deps
+# RUN playwright install-deps
 
 # Copy application
 COPY cinecalidad_scraper.py .
