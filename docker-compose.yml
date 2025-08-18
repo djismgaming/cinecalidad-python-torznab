@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  cinecalidad-scraper:
+    build: .
+    ports:
+      - "9697:9697"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+
